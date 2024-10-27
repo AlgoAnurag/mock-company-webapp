@@ -1,0 +1,16 @@
+name: Jenkinsfile Runner Simulation
+
+on: [push, pull_request]
+
+jobs:
+  jenkinsfile-runner:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Run Jenkinsfile Runner
+      uses: jenkinsci/jenkinsfile-runner-action@v1
+      with:
+        jenkinsfile: Jenkinsfile
